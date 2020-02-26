@@ -8,7 +8,7 @@
 #ifndef TICTACTOECLASS_HPP
 #define TICTACTOECLASS_HPP
 
-#include<iostream>
+#include <iostream>
 
 class TicTacToeClass {
 public:
