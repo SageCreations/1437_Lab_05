@@ -6,9 +6,12 @@
  */
 
  #include <iostream>
- #include "ticTacToeClass.hpp"
+ #include "TicTacToeClass.hpp"
 
  int main() {
-   
-   return 0;
+  TicTacToeClass game;
+
+  game.draw(game.GET_boardLogic(), game);
+
+  return 0;
  }

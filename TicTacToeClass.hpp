@@ -25,27 +25,31 @@ public:
 //************ END *****************
 
 //********** MUTATORS **************
-	void SET_board(int[3][3]);
+	void SET_BoardLogic(int[3][3]);
 	void SET_P1Turn(bool);
-	void SET_P1Win(bool);
+	void SET_Win(int);
+	void SET_BoardView(char[3][3]);
 //************ END *****************
 
 //*********** ACCESSORS ************
-	int GET_board();
+	int  GET_boardLogic();
 	bool GET_P1Turn();
-	bool GET_P1Win();
+	int  GET_Win();
+	char GET_BoardView();
 //************ END *****************
 
 //********* FUNCTIONS **************
-	void draw(int[3][3]);
-	void winner(bool);
+	void draw(&char[3][3], &TicTacToeClass);
+	void checkBoard(int[3][3]);
+	void winner();
 	void tie();
 //*********** END ******************
 
 private:
-	int board[3][3];
+	int  boardLogic[3][3];
+	char boardView[3][3];
 	bool p1_turn;
-	bool p1_win;
+	int  winner;
 };
 
 #endif /* TICTACTOECLASS_HPP */
