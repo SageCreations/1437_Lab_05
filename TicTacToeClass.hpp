@@ -17,7 +17,7 @@ public:
 //************ END *****************
 
 //****** COPY CONSTRUCTOR **********
-	TicTacToeClass(int[3][3], bool, bool);
+	TicTacToeClass(int[3][3], char[3][3], bool, int);
 //************ END *****************
 
 //********** DESTRUCTOR ************
@@ -32,16 +32,16 @@ public:
 //************ END *****************
 
 //*********** ACCESSORS ************
-	int  GET_boardLogic();
+	int  GET_BoardLogic();
 	bool GET_P1Turn();
 	int  GET_Win();
 	char GET_BoardView();
 //************ END *****************
 
 //********* FUNCTIONS **************
-	void draw(&char[3][3], &TicTacToeClass);
+	void draw(TicTacToeClass &obj);
 	void checkBoard(int[3][3]);
-	void winner();
+	void CheckWinner();
 	void tie();
 //*********** END ******************
 
