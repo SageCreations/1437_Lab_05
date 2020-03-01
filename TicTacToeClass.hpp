@@ -41,8 +41,10 @@ public:
 //********* FUNCTIONS **************
 	void draw(TicTacToeClass &obj);
 	void checkBoard(int[3][3]);
-	void CheckWinner();
+	void checkWinner();
 	void tie();
+	void takeInput();
+	void menu(TicTacToeClass &obj);
 //*********** END ******************
 
 private:

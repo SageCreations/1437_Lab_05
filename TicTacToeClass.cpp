@@ -11,7 +11,7 @@
 //********* CONSTRUCTOR ************
 TicTacToeClass::TicTacToeClass() {
   boardLogic[3][3] = 0;
-  boardView[3][3] = ' ';
+  boardView[3][3] = {{'1','2','3'}, {'4','5','6'}, {'7','8','9'}};
   p1_turn = true;
   winner = 0;
 }
@@ -97,6 +97,7 @@ void TicTacToeClass::draw(TicTacToeClass &obj) {
 	}
 
 	obj.SET_BoardView(b);
+
 }
 
 void TicTacToeClass::checkBoard(int b[3][3]) {
@@ -111,11 +112,26 @@ void TicTacToeClass::checkBoard(int b[3][3]) {
 	}
 }
 
-void TicTacToeClass::CheckWinner() {
+void TicTacToeClass::checkWinner() {
 
 }
 
 void TicTacToeClass::tie() {
+
+}
+
+void TicTacToeClass::takeInput() {
+
+}
+
+void TicTacToeClass::menu(TicTacToeClass &obj) {
+	if (obj.GET_P1Turn) {
+		std::cout << "\n\nPlayer's 1 turn.";
+	} else {
+		std::cout << "\n\nPlayer's 2 turn.";
+	}
+	draw(obj);
+
 
 }
 //*********** END ******************
