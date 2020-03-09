@@ -196,28 +196,43 @@ int TicTacToeClass::checkBoard(int a[3][3]) {
 	return win;
 }
 
-
-
-void TicTacToeClass::menu(TicTacToeClass &obj, int a[3][3], char b[3][3]) {
-	static int c[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-	if (obj.GET_P1Turn()) {
-		std::cout << "\n\n>>Player's 1 turn.\n\n";
-	} else {
-		std::cout << "\n\n>>Player's 2 turn.\n\n";
-	}
+void TicTacToeClass::menu(TicTacToeClass &obj, int a[3][3], char b[3][3], int c[9]) {
 	
-	draw(obj, a, b);
+	bool tie;
+	for (int i = 0; i < 9; i++) {
+		if (c[i] == 0) {
+			tie = false;
+			break;
+		}
+		else tie = true;
+	}
 
-	int num;
-	std::cout << "\n<<Pick whichever spot you would like: ";
-	std::cin  >> num;
+	if (tie == false) {
+	
+		if (obj.GET_P1Turn()) {
+			std::cout << "\n\n>>Player's 1 turn.\n\n";
+		} else {
+			std::cout << "\n\n>>Player's 2 turn.\n\n";
+		}
+	
+		draw(obj, a, b);
 
-	if (c[num-1] == 0) {
-		obj.SET_LogicBoard(a, num);
-		c[num-1] = num;
-		obj.SET_P1Turn(!p1_turn);
+		int num;
+		std::cout << "\n<<Pick whichever spot you would like: ";
+		std::cin  >> num;
+
+	
+
+	
+		if (c[num-1] == 0) {
+			obj.SET_LogicBoard(a, num);
+			c[num-1] = num;
+			obj.SET_P1Turn(!p1_turn);
+		} else {
+			std::cout << "\n>>This spot as already been chosen, choose another.";
+		}
 	} else {
-		std::cout << "\n>>This spot as already been chosen, choose another.";
+		obj.SET_Win(3);
 	}
 }
 //*********** END ******************
