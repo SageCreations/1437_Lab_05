@@ -40,7 +40,7 @@ public:
 
 //********* FUNCTIONS **************
 	void draw(TicTacToeClass &obj, int[3][3], char[3][3]);
-	void checkBoard(int[3][3]);
+	int checkBoard(int[3][3]);
 	void menu(TicTacToeClass &obj, int[3][3], char[3][3]);
 //*********** END ******************
 

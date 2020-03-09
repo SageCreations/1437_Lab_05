@@ -9,7 +9,7 @@
  #include "TicTacToeClass.cpp"
 
  int main() {
-    char more;
+    int win;
     int a[3][3] = {
         {0, 0, 0}, 
         {0, 0, 0}, 
@@ -22,18 +22,14 @@
 
     TicTacToeClass game;
 
-    do {
-        do {
-            game.menu(game, a, b);
-            game.GET_Win();
 
-        } while (game.GET_Win() == 0);
         
-        std::cout << "\n\n\n\t\tDo more (Y/N) ?";
-        std::cin  >> more;
-
-
-    } while (more == 'y' || more == 'Y');
+    do {
+        game.menu(game, a, b);
+        win = game.checkBoard(a);
+    } while (win == 0);
+        
+    std::cout << "\n\n\t\tPLAYER " << win << " HAS WON!!!\n\n";
 
     return 0;
  }
